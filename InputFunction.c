@@ -31,12 +31,14 @@ int InputFunction(char *inputfile, double **x, double **V){
     char *comment = "#%\n";
     int i, rows, comment_flag, control;
     char *line, buffer[_MaxLineLength_];
-    FILE *fd = fopen(inputfile, "r");
+    FILE *fd;
 
-    if(inputfile == NULL){  
+    if(inputfile == NULL)   fd = stdin;
+    else                    fd = fopen(inputfile, "r");
+    if(fd == NULL){
         fprintf(stderr, "ERROR: Inputfile \"%s\" couldn't be opened.\n", inputfile);
         exit(1);
-    } 
+    }
 
     rows = 0;
     while(fgets(buffer, sizeof(buffer), fd) != NULL){
@@ -60,14 +62,14 @@ int InputFunction(char *inputfile, double **x, double **V){
         while(isspace(*line)) line++;
         if(*line == 0) continue;
 
-        // At this point the requested input line is stripped of 
+        // At this point the requested input line is stripped of
         //  comments and blank lines. From here on the parsing starts:
         //printf("%s\n", line);
 //-----------------------------------------------------------------------------------
 
         (*x) = realloc((*x), (rows + 1) * sizeof(double));
         (*V) = realloc((*V), (rows + 1) * sizeof(double));
-         
+
         //(*x)[rows] = (double)rows;
         //(*V)[rows] = 2*(double)rows;
 
