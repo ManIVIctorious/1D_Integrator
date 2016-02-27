@@ -3,7 +3,7 @@ CC = gcc
 # Compilerflags
 CFLAGS = -g03 -Wall -Werror -Wstrict-prototypes -Wmissing-prototypes -mtune=native
 # Zu erstellende fertige Programme (mit relativem Pfad vorangestellt)
-EXE = ../../bin/integrator
+EXE = ../../bin/Integrator
 # Objektdateien (.o bzw. .out), Librarys und Abhängigkeiten
 # (wenn Abhängigkeit geändert -> make wird neu ausgeführt)
 OBJ1 = main.o InputFunction.o Integral.o
