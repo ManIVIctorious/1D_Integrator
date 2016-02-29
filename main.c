@@ -18,12 +18,12 @@ int main(int argc, char **argv){
     inty = malloc(dimension*sizeof(double));
     integralvalue = TrapezoidalIntegral(x, y, dimension, inty);
 
-    printf("#\n#                      Integral y dx = % 26.18lf\n", integralvalue);
-    printf("#               x");
-    printf("                           y");
-    printf("                        Int(y)\n");
+    printf("#\n#                      Integral y dx = % 24.16lf\n", integralvalue);
+    printf("#              x");
+    printf("                         y");
+    printf("                      Int(y)\n");
     for(i=0; i<dimension; ++i){
-        printf("% 26.18lf  % 26.18lf  % 26.18lf\n", x[i], y[i], inty[i]);
+        printf("% 24.16lf  % 24.16lf  % 24.16lf\n", x[i], y[i], inty[i]);
     }
 
     return 0;
