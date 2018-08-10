@@ -7,6 +7,14 @@ double TrapezoidalIntegral(double *x, double *y, int dimension, double *inty);
 
 int main(int argc, char **argv){
 
+    if(argc != 3){
+        fprintf(stderr,
+            "\n (-) Error: Please enter input file"
+            "\n     Aborting...\n\n"
+        );
+        exit(1);
+    }
+
     int i, dimension;
     double *x, *y, *inty, integralvalue;
     char *inputfile = argv[1];
