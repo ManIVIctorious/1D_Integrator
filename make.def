@@ -1,0 +1,16 @@
+# Executable name
+  EXENAME = 1d-Integrator
+
+# Additional libraries, includes and packages
+  LIB      = -lm
+  INC      = 
+  PACKAGES = 
+
+# Preprocessor flags
+  PPF = 
+
+# Source Files
+  SRC += InputFunction.c
+  SRC += Integral.c
+  SRC += main.c
+
